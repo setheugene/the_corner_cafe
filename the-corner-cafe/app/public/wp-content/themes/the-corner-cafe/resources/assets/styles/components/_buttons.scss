@@ -1,0 +1,69 @@
+.button-slant {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 25px;
+  font-weight: 900;
+  background-color: $color-cc-red;
+  color: $color-main-light;
+  padding: 1px;
+  height: 90%;
+  text-transform: uppercase;
+  box-shadow: $standard-box-shadow;
+  -ms-transform: skewX(-10deg); /* IE 9 */
+  transform: skewX(-10deg);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  @media (max-width: $screen-md) {
+    font-size: 20px;
+  }
+
+  span {
+    border: 1px solid $color-main-light;
+    padding: 5px 5px 1px 5px;
+  }
+
+  &:hover {
+    color: $color-cc-white;
+    box-shadow: 6px 6px 10px rgba($color-cc-black, 0.6);
+    transform: skewX(-15deg);
+  }
+}
+
+.button-primary {
+  margin-top: 40px;
+  z-index: 20;
+  a {
+    display: inline-block;
+    font-family: "Vollkorn", serif;
+    font-weight: 900;
+    font-size: 19px;
+    text-transform: uppercase;
+    text-align: center;
+    min-width: 115px;
+    color: $color-cc-red;
+    background-color: $color-cc-white;
+    padding: 13px 17px 10px;
+    border-radius: 13px;
+    border: 1px solid $color-cc-dark-green;
+    box-shadow: 0 5px 0 -0.5px $color-cc-dark-green;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 6px -0.5px rgba($color-cc-dark-green, 0.7);
+    }
+
+    &:active {
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+  }
+}
+
+.button-primary.no-shadow {
+  margin-top: 5px;
+  z-index: 20;
+  a {
+    box-shadow: none;
+  }
+}

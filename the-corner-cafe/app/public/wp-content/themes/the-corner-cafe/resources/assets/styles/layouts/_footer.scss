@@ -1,0 +1,340 @@
+.footer {
+  font-family: "Yanone Kaffeesatz", sans-serif;
+  font-size: 25px;
+  display: grid;
+  letter-spacing: 1px;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "links locations buttons";
+  color: $color-cc-white;
+  background-color: $color-cc-charcoal;
+  padding: 90px 0;
+  height: fit-content;
+  white-space: nowrap;
+
+  @media (max-width: $screen-md-lg) {
+    grid-template-columns: 0.75fr 2fr 0.75fr;
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "locations locations" "links buttons";
+    padding: 60px 0;
+  }
+
+  @media (max-width: $screen-xs) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "locations" "links" "buttons";
+  }
+
+  &-heading {
+    letter-spacing: 0;
+    font-family: "Oleo Script", cursive;
+    color: $color-cc-charcoal;
+    background-color: $color-main-light;
+    font-size: 35px;
+    padding: 5px 10px;
+    margin-bottom: 30px;
+    -ms-transform: skewX(-10deg); /* IE 9 */
+    transform: skewX(-10deg);
+
+    @media (max-width: $screen-md-lg) {
+      font-size: 25px;
+    }
+  }
+
+  &-links {
+    grid-area: links;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    @media (max-width: 800px) {
+      margin-top: 30px;
+    }
+
+    .footer-menu {
+      .menu-footer-menu-container {
+        .footer-nav {
+          position: relative;
+          list-style: none;
+          text-align: center;
+          padding: 0;
+
+          .menu-item {
+            a {
+              position: relative;
+            }
+
+            a::after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              transform: translate(-50%, 0%);
+              height: 31px;
+              width: 95%;
+              border-bottom: 1px solid $color-cc-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-locations {
+    grid-area: locations;
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40% 20% 20% 20%;
+    grid-template-areas:
+      ". title ."
+      "riverside riverside riverside"
+      "liberty liberty liberty"
+      "independence independence independence";
+    white-space: nowrap;
+
+    @media (max-width: $screen-xs) {
+      grid-template-rows: 15% 27% 27% 27%;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title "
+        "riverside"
+        "liberty"
+        "independence";
+    }
+
+    .locations-title {
+      grid-area: title;
+      width: fit-content;
+      height: fit-content;
+      margin: 0 auto;
+    }
+
+    .city {
+      text-align: right;
+      margin-right: 25px;
+      font-size: 28px;
+
+      @media (max-width: $screen-md-lg) {
+        font-size: 23px;
+        margin-right: 10px;
+      }
+
+      @media (max-width: $screen-xs) {
+        text-align: center;
+        margin: 0;
+        margin-top: 10px;
+      }
+    }
+
+    .street {
+      text-align: center;
+
+      &::before {
+        content: "";
+        position: relative;
+        bottom: -4px;
+        float: left;
+        height: 70%;
+        border-left: 4px solid rgba($color-main-light, 0.3);
+      }
+
+      &::after {
+        content: "";
+        position: relative;
+        bottom: -4px;
+        float: right;
+        height: 70%;
+        border-right: 4px solid rgba($color-main-light, 0.3);
+      }
+    }
+
+    .phone {
+      text-align: left;
+      margin-left: 25px;
+
+      @media (max-width: $screen-md-lg) {
+        margin-left: 10px;
+      }
+
+      @media (max-width: $screen-xs) {
+        text-align: center;
+        margin: 0;
+      }
+    }
+
+    .information {
+      @media (max-width: $screen-md-lg) {
+        font-size: 20px;
+      }
+      &-riverside {
+        grid-area: riverside;
+        display: grid;
+        grid-template-columns: 1fr 260px 1fr;
+        grid-template-areas: "rCity rStreet rPhone";
+
+        @media (max-width: $screen-md-lg) {
+          grid-template-columns: 1fr 210px 1fr;
+        }
+
+        @media (max-width: $screen-xs) {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          grid-template-areas: "rCity" "rStreet" "rPhone";
+          text-align: center;
+          margin: 0 auto 50px;
+        }
+
+        .city {
+          grid-area: rCity;
+        }
+
+        .street {
+          grid-area: rStreet;
+        }
+
+        .phone {
+          grid-area: rPhone;
+
+          @media (max-width: $screen-xs) {
+            border-bottom: 2px solid $color-main-light;
+            padding-bottom: 10px;
+          }
+        }
+      }
+      &-liberty {
+        grid-area: liberty;
+        display: grid;
+        grid-template-columns: 1fr 260px 1fr;
+        grid-template-areas: "lCity lStreet lPhone";
+
+        @media (max-width: $screen-md-lg) {
+          grid-template-columns: 1fr 210px 1fr;
+        }
+
+        @media (max-width: $screen-xs) {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          grid-template-areas: "lCity" "lStreet" "lPhone";
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .city {
+          grid-area: lCity;
+        }
+
+        .street {
+          grid-area: lStreet;
+        }
+
+        .phone {
+          grid-area: lPhone;
+
+          @media (max-width: $screen-xs) {
+            border-bottom: 2px solid $color-main-light;
+            padding-bottom: 10px;
+          }
+        }
+      }
+      &-independence {
+        grid-area: independence;
+        display: grid;
+        grid-template-columns: 1fr 260px 1fr;
+        grid-template-areas: "iCity iStreet iPhone";
+
+        @media (max-width: $screen-md-lg) {
+          grid-template-columns: 1fr 210px 1fr;
+        }
+
+        @media (max-width: $screen-xs) {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto auto auto;
+          grid-template-areas: "iCity" "iStreet" "iPhone";
+          text-align: center;
+          margin: 0 auto;
+        }
+
+        .city {
+          grid-area: iCity;
+        }
+
+        .street {
+          grid-area: iStreet;
+        }
+
+        .phone {
+          grid-area: iPhone;
+        }
+      }
+    }
+  }
+
+  &-buttons {
+    grid-area: buttons;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      font-size: 35px;
+      height: 47px;
+      margin-top: 20px;
+
+      @media (max-width: $screen-md-lg) {
+        font-size: 30px;
+        height: 40px;
+      }
+    }
+
+    .button-slant {
+      span {
+        padding: 7px 5px 1px 5px;
+      }
+    }
+  }
+}
+
+.sub-footer {
+  color: $color-cc-white;
+  background-color: $color-cc-charcoal;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10px;
+
+  @media (max-width: $screen-sm) {
+    flex-direction: column;
+  }
+
+  .left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+  }
+
+  .make-tagline {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .text {
+        font-family: inherit;
+        text-transform: uppercase;
+        font-size: 10px;
+        letter-spacing: 0.9px;
+        margin-right: 5px;
+      }
+
+      img {
+        height: 28px;
+      }
+    }
+  }
+}

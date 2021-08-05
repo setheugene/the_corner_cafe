@@ -1,0 +1,31 @@
+/** Import Bootstrap functions */
+@import "~bootstrap/scss/functions";
+
+/** Bootstrap navbar fix (https://git.io/fADqW) */
+$navbar-dark-toggler-icon-bg: none;
+$navbar-light-toggler-icon-bg: none;
+
+$color-cc-white: #fff;
+$color-cc-black: #000;
+
+$color-main-dark: #4a4a4a;
+$color-main-light: #f4f0e9;
+
+$color-cc-red: #9d4747;
+$color-cc-dark-green: #42524a;
+$color-cc-green: #77836b;
+$color-cc-charcoal: #303030;
+
+$standard-box-shadow: 4px 4px 5px rgba($color-cc-black, 0.6);
+$box-shadow-to-lower-left: -2px 7px 10px 3px rgba(0, 0, 0, 0.5);
+$surrounding-box-shadow: 0 0 10px rgba($color-cc-black, 0.6);
+$image-border: 3px solid white;
+
+/*** responsive screen widths ***/
+$screen-retina: 2560px;
+$screen-xl: 1920px;
+$screen-lg: 1440px;
+$screen-md-lg: 1200px;
+$screen-md: 1000px;
+$screen-sm: 767px;
+$screen-xs: 490px;

@@ -1,0 +1,125 @@
+.landmark-modal {
+  img {
+    -webkit-filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+    filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+  }
+  .trigger {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: $color-cc-dark-green;
+    -webkit-filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+    filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+    color: $color-cc-white;
+    padding-bottom: 5px;
+    width: 50px;
+    height: 50px;
+    right: -20px;
+    top: 95px;
+    font-size: 45px;
+    font-weight: 200;
+    padding-bottom: 11px;
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.2s;
+    animation: pulse 2s infinite;
+  }
+
+  .trigger-active {
+    transform: rotate(45deg);
+    animation: none;
+  }
+
+  .trigger:hover {
+    animation: none;
+  }
+
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0.4);
+    }
+    70% {
+      -webkit-box-shadow: 0 0 0 25px rgba($color-cc-dark-green, 0);
+    }
+    100% {
+      -webkit-box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0);
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0.4);
+      box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0.4);
+    }
+    70% {
+      -moz-box-shadow: 0 0 0 25px rgba($color-cc-dark-green, 0);
+      box-shadow: 0 0 0 25px rgba($color-cc-dark-green, 0);
+    }
+    100% {
+      -moz-box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0);
+      box-shadow: 0 0 0 0 rgba($color-cc-dark-green, 0);
+    }
+  }
+
+  .tooltip-modal {
+    opacity: 0;
+    z-index: -5;
+    position: absolute;
+    right: -580px;
+    top: 55px;
+    transition: all 0.4s;
+    width: 550px;
+    height: 415px;
+    -webkit-filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+    filter: drop-shadow(0 0 10px rgba($color-cc-black, 0.6));
+
+    @media (max-width: $screen-md) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90vw;
+      height: auto;
+    }
+
+    .content {
+      padding: 50px 45px;
+      background-color: $color-cc-dark-green;
+      color: $color-cc-white;
+      transition: all 0.2s;
+      border-radius: 9px;
+
+      .header {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        font-size: 28px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .paragraph {
+        p {
+          font-size: 24px;
+          line-height: 1.5;
+          color: $color-cc-white;
+        }
+      }
+
+      .button-primary {
+        display: none;
+        width: fit-content;
+        margin: 20px auto 0;
+
+        @media (max-width: $screen-md) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .modal-active {
+    opacity: 1;
+    z-index: 100;
+  }
+}

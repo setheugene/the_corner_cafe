@@ -1,0 +1,92 @@
+.section-partnerships {
+  position: relative;
+  padding-bottom: 60px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .gingham-banner {
+    background-image: url(/wp-content/uploads/2020/04/red-gingham-pattern.jpg);
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    height: 55px;
+    top: -2px;
+    z-index: -15;
+    overflow-x: hidden;
+  }
+
+  &__heading {
+    font-family: "Oleo Script", cursive;
+    font-size: 50px;
+    color: $color-cc-red;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 75px auto 0;
+    line-height: 1;
+  }
+
+  &__description {
+    text-align: center;
+    margin: 20px auto 50px;
+    color: $color-main-dark;
+    width: 80%;
+  }
+
+  .partners-container {
+    color: $color-main-dark;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .partner-card {
+      width: 23%;
+      margin-bottom: 30px;
+
+      @media (max-width: $screen-sm) {
+        width: 45%;
+      }
+
+      @media (max-width: $screen-xs) {
+        width: 70%;
+        margin-bottom: 50px;
+      }
+
+      .partner-logo {
+        width: 80%;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .partner-description {
+        text-align: center;
+        margin: 16px auto 0;
+
+        p {
+          font-weight: 300;
+          font-family: "Yanone Kaffeesatz", sans-serif;
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}

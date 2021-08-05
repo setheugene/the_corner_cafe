@@ -1,0 +1,113 @@
+.section-gift-cards {
+  position: relative;
+  padding-bottom: 100px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .oleo {
+    font-size: 50px;
+    text-align: center;
+    margin: 0 auto 70px;
+    padding-top: 120px;
+    text-transform: none;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $screen-md-lg) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+    }
+
+    .action-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: $box-shadow-to-lower-left;
+      height: 250px;
+      width: 330px;
+      padding: 15px 20px;
+      background-color: $color-cc-red;
+      color: $color-main-light;
+
+      @media (max-width: $screen-md-lg) {
+        height: 220px;
+        width: 275px;
+      }
+
+      @media (max-width: $screen-md) {
+        height: 175px;
+        width: 215px;
+      }
+
+      @media (max-width: $screen-sm) {
+        height: 250px;
+        width: 330px;
+        margin-bottom: 50px;
+      }
+
+      @media (max-width: $screen-xs) {
+        width: 80%;
+      }
+
+      .heading {
+        margin: 0 36px 8px;
+        line-height: 0.9;
+
+        @media (max-width: $screen-md-lg) {
+          font-size: 35px;
+        }
+
+        @media (max-width: $screen-sm) {
+          font-size: 50px;
+        }
+      }
+
+      .button-primary {
+        border-color: $color-cc-dark-green;
+        margin-top: 0;
+
+        a {
+          @media (max-width: $screen-md) {
+            font-size: 14px;
+          }
+
+          @media (max-width: $screen-sm) {
+            font-size: 19px;
+          }
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 95%;
+        height: 95%;
+        border: 2px solid $color-main-light;
+      }
+    }
+  }
+}

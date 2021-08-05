@@ -1,0 +1,102 @@
+.section-light-image-right {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-areas: "copy image";
+  padding: 70px 0 110px;
+
+  @media (max-width: $screen-sm) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "copy" "image";
+    padding: 50px 0 10px;
+  }
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    z-index: -5;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+  }
+
+  .section-light-ir__left {
+    grid-area: copy;
+    margin-top: 30px;
+
+    .header-offset {
+      @media (max-width: $screen-xs) {
+        text-align: left;
+        padding-right: 30px;
+      }
+    }
+
+    &--paragraph {
+      width: 85%;
+
+      @media (max-width: $screen-xs) {
+        margin: 0 auto;
+      }
+    }
+
+    .button-primary {
+      @media (max-width: $screen-xs) {
+        margin-left: 35px;
+      }
+    }
+  }
+
+  .section-light-ir__right {
+    grid-area: image;
+
+    .img-wrap {
+      position: absolute;
+      right: -660px;
+      width: 600px;
+      height: 445px;
+
+      @media (max-width: $screen-md-lg) {
+        width: 500px;
+        height: 400px;
+        margin-top: 130px;
+      }
+
+      @media (max-width: $screen-md) {
+        width: 400px;
+        height: 300px;
+        top: 150px;
+      }
+
+      @media (max-width: $screen-sm) {
+        position: relative;
+        right: -725px;
+        top: -135px;
+      }
+
+      @media (max-width: $screen-xs) {
+        right: -540px;
+        top: -75px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 5px;
+      margin-right: 520px;
+      right: 0;
+      border: 3px solid white;
+      transform: rotate(-8deg);
+      object-fit: cover;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+  }
+}

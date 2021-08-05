@@ -1,0 +1,16 @@
+[30-Mar-2021 16:50:25 UTC] PHP Warning:  Error while sending QUERY packet. PID=16422 in /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/wp-db.php on line 2056
+[30-Mar-2021 16:50:25 UTC] PHP Stack trace:
+[30-Mar-2021 16:50:25 UTC] PHP   1. {main}() /Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar:0
+[30-Mar-2021 16:50:25 UTC] PHP   2. include() /Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar:4
+[30-Mar-2021 16:50:25 UTC] PHP   3. include() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/php/boot-phar.php:11
+[30-Mar-2021 16:50:25 UTC] PHP   4. WP_CLI\bootstrap() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/wp-cli.php:27
+[30-Mar-2021 16:50:25 UTC] PHP   5. WP_CLI\Bootstrap\LaunchRunner->process() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/bootstrap.php:74
+[30-Mar-2021 16:50:25 UTC] PHP   6. WP_CLI\Runner->start() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php:23
+[30-Mar-2021 16:50:25 UTC] PHP   7. WP_CLI\Runner->load_wordpress() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1158
+[30-Mar-2021 16:50:25 UTC] PHP   8. require() phar:///Applications/Local.app/Contents/Resources/extraResources/bin/wp-cli/wp-cli.phar/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php:1237
+[30-Mar-2021 16:50:25 UTC] PHP   9. wp_cookie_constants() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-settings.php:362
+[30-Mar-2021 16:50:25 UTC] PHP  10. get_option() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/default-constants.php:284
+[30-Mar-2021 16:50:25 UTC] PHP  11. wpdb->get_row() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/option.php:146
+[30-Mar-2021 16:50:25 UTC] PHP  12. wpdb->query() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/wp-db.php:2616
+[30-Mar-2021 16:50:25 UTC] PHP  13. wpdb->_do_query() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/wp-db.php:1945
+[30-Mar-2021 16:50:25 UTC] PHP  14. mysqli_query() /Users/Seth/Local Sites/the-corner-cafe/app/public/wp-includes/wp-db.php:2056

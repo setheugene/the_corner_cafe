@@ -1,0 +1,160 @@
+.section-timeline {
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/uploads/2020/05/sage-green-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    z-index: -5;
+    margin-left: -50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .header-center {
+    padding-top: 75px;
+
+    h2 {
+      @media (max-width: $screen-xs) {
+        font-size: 70px;
+      }
+    }
+
+    h2:nth-child(2) {
+      color: $color-cc-white;
+
+      @media (max-width: $screen-xs) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  .timeline-container {
+    padding-bottom: 150px;
+
+    @media (max-width: $screen-sm) {
+      padding-bottom: 80px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      border: 1px solid $color-cc-dark-green;
+      width: 95%;
+      height: 1px;
+      right: 27px;
+      margin-top: 60px;
+
+      @media (max-width: $screen-md) {
+        width: 90%;
+      }
+
+      @media (max-width: $screen-xs) {
+        width: 85%;
+      }
+    }
+
+    .timeline-arrows {
+      top: 60px;
+      color: $color-main-light;
+      background-color: $color-cc-red;
+      height: 35px;
+      width: 35px;
+      z-index: 20;
+    }
+
+    .slick-prev {
+      left: 12px;
+
+      &:before {
+        content: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Timeline-arrow.svg");
+        font-weight: 600;
+        position: absolute;
+        font-size: 35px;
+        top: 0;
+        left: 12px;
+        font-family: "Vollkorn", serif;
+        transform: scaleX(-1);
+      }
+    }
+
+    .slick-next {
+      right: 12px;
+
+      &:before {
+        content: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Timeline-arrow.svg");
+        font-weight: 600;
+        font-size: 35px;
+        font-family: "Vollkorn", serif;
+      }
+    }
+
+    .item {
+      text-align: center;
+
+      .year {
+        font-family: "Oleo Script", cursive;
+        color: $color-cc-dark-green;
+        font-size: 33px;
+        margin-bottom: 55px;
+      }
+
+      .card {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        color: $color-cc-charcoal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        padding: 5px 5px 15px;
+
+        .vr {
+          border-left: 1px solid $color-cc-dark-green;
+          height: 47px;
+          z-index: 30;
+          top: -59px;
+          position: absolute;
+
+          &::before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            background-color: $color-main-light;
+            border: 2px solid $color-cc-dark-green;
+            border-radius: 50%;
+            left: -8px;
+            top: -10px;
+          }
+        }
+
+        .photo {
+          height: 180px;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .heading {
+          font-size: 24px;
+          text-transform: uppercase;
+          margin: 25px 0 7px;
+          line-height: 24px;
+          letter-spacing: 1.2px;
+          font-weight: 700;
+        }
+        .description {
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.1;
+        }
+      }
+    }
+  }
+}

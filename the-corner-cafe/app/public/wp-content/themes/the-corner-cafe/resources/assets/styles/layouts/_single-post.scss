@@ -1,0 +1,109 @@
+.single-post {
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .single-post-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "entry related";
+    padding: 90px 0;
+
+    @media (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "entry"
+        "related";
+    }
+
+    .entry-content {
+      grid-area: entry;
+      padding-right: 40px;
+      border-right: 2px solid $color-cc-green;
+
+      @media (max-width: $screen-md) {
+        border: none;
+        padding: 0;
+        margin: 0 auto;
+        width: 85%;
+      }
+    }
+
+    .related-posts {
+      grid-area: related;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-left: 50px;
+
+      @media (max-width: $screen-md) {
+        margin-top: 100px;
+        margin-left: 0;
+      }
+
+      h4 {
+        color: $color-main-dark;
+
+        @media (max-width: $screen-md) {
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      .post {
+        margin: 40px 0 0;
+
+        @media (max-width: $screen-md) {
+          margin: 40px auto 0;
+          width: 300px;
+        }
+
+        h6 {
+          font-weight: 700;
+          letter-spacing: 1.2px;
+          color: $color-cc-dark-green;
+        }
+
+        .photo {
+          width: 300px;
+          height: 130px;
+          border-radius: 5px;
+          margin-bottom: 15px;
+          border: 4px solid $color-cc-white;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        h5 {
+          color: $color-cc-dark-green;
+        }
+
+        .link {
+          font-family: "Oleo Script", cursive;
+          color: $color-cc-red;
+          text-decoration: underline;
+          font-size: 17px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

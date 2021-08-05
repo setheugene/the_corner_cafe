@@ -1,0 +1,211 @@
+.section-blog-posts {
+  position: relative;
+  padding: 125px 0 125px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .blog-listing {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    article {
+      width: 30%;
+      margin: 0 auto 50px;
+
+      @media (max-width: $screen-md) {
+        width: 45%;
+      }
+
+      @media (max-width: $screen-sm) {
+        width: 85%;
+      }
+
+      .card {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        color: $color-cc-charcoal;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 0 auto;
+        padding: 5px 5px 15px;
+        width: 100%;
+
+        .photo {
+          height: 245px;
+
+          @media (max-width: $screen-md-lg) {
+            height: 175px;
+          }
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin: 35px 20px 5px;
+
+          .title {
+            font-size: 24px;
+            line-height: 1.208;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: $color-main-dark;
+          }
+
+          .summary p {
+            font-size: 20px;
+            line-height: 1.1;
+            font-weight: 300px;
+          }
+          .link {
+            font-family: "Oleo Script", cursive;
+            color: $color-cc-red;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 32%;
+    margin: 50px auto 0;
+
+    .page-numbers {
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      font-weight: 600;
+      font-size: 35px;
+      color: $color-cc-dark-green;
+
+      &.current {
+        color: $color-cc-red;
+      }
+
+      &.prev::before {
+        content: "";
+        background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Timeline-arrow.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 33px;
+        width: 33px;
+        top: 8px;
+        left: -28px;
+        transform: rotate(180deg);
+        background-color: $color-cc-dark-green;
+        fill: $color-cc-white;
+      }
+
+      &.next::before {
+        content: "";
+        background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Timeline-arrow.svg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        height: 33px;
+        width: 33px;
+        top: 8px;
+        background-color: $color-cc-dark-green;
+        fill: $color-cc-white;
+      }
+    }
+  }
+}
+.search-body {
+  position: relative;
+  padding: 100px 0 100px;
+  min-height: 50vh;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .noResults {
+    margin-top: 30px;
+    text-align: center;
+    color: $color-cc-red;
+  }
+
+  .search-bar {
+    margin: 0 auto;
+  }
+
+  article {
+    cursor: pointer;
+    position: relative;
+    margin: 35px auto;
+    width: 75%;
+    padding: 20px;
+    background-color: $color-cc-white;
+    border-radius: 5px;
+    box-shadow: $standard-box-shadow;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 4px 4px 10px 3px rgba($color-main-dark, 0.7);
+    }
+
+    &:active {
+      transform: translateY(5px);
+      box-shadow: none;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      .entry-title {
+        margin: 0;
+      }
+
+      a {
+        vertical-align: text-top;
+      }
+
+      p {
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+  }
+}

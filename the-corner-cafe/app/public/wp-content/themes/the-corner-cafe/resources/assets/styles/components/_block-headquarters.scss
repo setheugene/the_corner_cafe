@@ -1,0 +1,106 @@
+.section-headquarters {
+  position: relative;
+  height: 310px;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    background-image: url(/wp-content/uploads/2020/04/wooden-texture.jpg);
+    background-repeat: repeat-y;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50vw;
+    z-index: -15;
+  }
+
+  .info-container {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    position: relative;
+    text-align: center;
+    box-shadow: $box-shadow-to-lower-left;
+    padding: 15px 20px;
+    background-color: $color-cc-dark-green;
+    color: $color-main-light;
+    width: 100%;
+    height: 225px;
+
+    .inner-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+      justify-content: space-around;
+      align-items: center;
+
+      @media (max-width: $screen-sm) {
+        flex-direction: column;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 95%;
+        border: 2px solid $color-main-light;
+      }
+    }
+
+    .title {
+      width: 135%;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      @media (max-width: $screen-md) {
+        font-size: 30px;
+        margin: 15px auto 0;
+        width: 100%;
+      }
+    }
+
+    .middle {
+      width: 100%;
+      text-align: left;
+      z-index: 5;
+
+      @media (max-width: $screen-sm) {
+        text-align: center;
+      }
+
+      .phone {
+        font-size: 35px;
+
+        @media (max-width: $screen-md) {
+          font-size: 27px;
+        }
+      }
+
+      .email {
+        font-size: 25px;
+
+        @media (max-width: $screen-md) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .right {
+      width: 100%;
+      z-index: 5;
+      font-size: 27px;
+      text-align: left;
+
+      @media (max-width: $screen-md) {
+        font-size: 20px;
+      }
+
+      @media (max-width: $screen-sm) {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,308 @@
+.about-section {
+  position: relative;
+
+  &::before {
+    content: "";
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .copy {
+    @media (max-width: $screen-sm) {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  &-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "topCopy photos";
+    position: relative;
+    padding-top: 100px;
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "topCopy" "photos";
+      padding-top: 75px;
+    }
+
+    @media (max-width: $screen-xs) {
+      padding-top: 50px;
+    }
+
+    &-left {
+      grid-area: topCopy;
+
+      .top-third {
+        margin-right: 50px;
+
+        @media (max-width: $screen-sm) {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &-right {
+      grid-area: photos;
+      margin-top: 25px;
+
+      .large-image {
+        position: absolute;
+        right: -50vw;
+        width: 650px;
+        height: 490px;
+
+        @media (max-width: $screen-lg) {
+          width: 520px;
+          height: 400px;
+          top: 170px;
+        }
+
+        @media (max-width: $screen-md-lg) {
+          right: -680px;
+        }
+
+        @media (max-width: $screen-md) {
+          right: -800px;
+        }
+
+        @media (max-width: $screen-sm) {
+          position: relative;
+          top: 0;
+          right: -503px;
+          width: 100%;
+        }
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+          border: $image-border;
+          object-fit: cover;
+          transform: rotate(-5deg);
+          right: 0;
+          margin-right: 525px;
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+
+          @media (max-width: $screen-sm) {
+            height: 90%;
+            width: 90%;
+          }
+        }
+      }
+
+      .small-image {
+        width: 400px;
+        height: 300px;
+        position: absolute;
+        right: -50vw;
+        top: 590px;
+
+        @media (max-width: $screen-md-lg) {
+          right: -660px;
+        }
+
+        @media (max-width: $screen-md) {
+          right: -775px;
+        }
+
+        @media (max-width: $screen-sm) {
+          position: relative;
+          top: -30px;
+          width: 100%;
+          right: -592px;
+        }
+
+        img {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          border-radius: 5px;
+          border: $image-border;
+          object-fit: cover;
+          transform: rotate(9deg);
+          right: 0;
+          margin-right: 550px;
+          box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+
+          @media (max-width: $screen-sm) {
+            height: 85%;
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+  &-middle {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "landmark middleCopy";
+    position: relative;
+    margin: 60px 0;
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "middleCopy" "landmark";
+      margin: 0 auto;
+    }
+
+    &-left {
+      grid-area: landmark;
+      width: 100vw;
+      margin-left: -50vw;
+      left: 500px;
+      position: absolute;
+
+      @media (max-width: $screen-xl) {
+        margin-left: -55vw;
+      }
+
+      @media (max-width: $screen-md-lg) {
+        margin-left: -70vw;
+      }
+
+      @media (max-width: 870px) {
+        margin-left: -78vw;
+      }
+
+      @media (max-width: $screen-sm) {
+        position: relative;
+        margin: 0 auto;
+        left: 0px;
+        width: unset;
+      }
+
+      .landmark-modal {
+        position: absolute;
+
+        @media (max-width: $screen-lg) {
+          top: 25px;
+        }
+
+        @media (max-width: $screen-md) {
+          top: 50px;
+        }
+
+        @media (max-width: $screen-sm) {
+          top: 0;
+          position: relative;
+        }
+
+        img {
+          width: 600px;
+
+          @media (max-width: $screen-lg) {
+            width: 500px;
+          }
+
+          @media (max-width: $screen-md) {
+            width: 400px;
+          }
+
+          @media (max-width: $screen-md) {
+            width: 300px;
+          }
+        }
+      }
+    }
+
+    &-right {
+      grid-area: middleCopy;
+    }
+  }
+  &-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "bottomCopy signage";
+    position: relative;
+    padding-bottom: 150px;
+    z-index: 1;
+
+    @media (max-width: $screen-sm) {
+      padding-bottom: 100px;
+    }
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "bottomCopy" "signage";
+      margin-top: 55px;
+    }
+
+    &-left {
+      grid-area: bottomCopy;
+      padding-right: 30px;
+    }
+
+    &-right {
+      grid-area: signage;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .button-signage {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        font-weight: 900;
+        color: $color-cc-red;
+        background-color: $color-cc-white;
+        font-size: 75px;
+        position: relative;
+        padding: 1px;
+        text-transform: uppercase;
+        box-shadow: $standard-box-shadow;
+        -ms-transform: skewX(-10deg); /* IE 9 */
+        transform: skew(-7deg, -2deg);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+        width: 90%;
+        padding: 6px 5px;
+        line-height: 65px;
+        margin-right: -50px;
+
+        @media (max-width: $screen-md-lg) {
+          font-size: 60px;
+        }
+
+        @media (max-width: $screen-md) {
+          font-size: 45px;
+          line-height: 40px;
+        }
+
+        @media (max-width: $screen-sm) {
+          width: fit-content;
+          margin: 40px auto 0;
+        }
+
+        @media (max-width: $screen-xs) {
+          width: 80%;
+        }
+
+        span {
+          display: block;
+          border: 1px solid $color-cc-dark-green;
+          padding: 25px 10px 15px;
+        }
+
+        &:hover {
+          box-shadow: 6px 6px 10px rgba($color-cc-black, 0.6);
+          transform: skewX(-15deg);
+        }
+      }
+    }
+  }
+}

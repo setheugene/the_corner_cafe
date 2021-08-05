@@ -1,0 +1,101 @@
+.section-contact {
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/uploads/2020/05/sage-green-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    z-index: -5;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__top {
+    padding-top: 90px;
+    text-align: center;
+    margin: 0 auto 60px;
+    width: 90%;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
+    padding-bottom: 60px;
+    min-height: 550px;
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "left" "right";
+    }
+
+    &-left {
+      grid-area: left;
+    }
+
+    &-right {
+      grid-area: right;
+      position: relative;
+      margin-right: -60vw;
+
+      @media (max-width: $screen-md-lg) {
+        margin-right: -50vw;
+      }
+
+      .landmark-modal {
+        position: absolute;
+        right: 300px;
+
+        @media (max-width: $screen-retina) {
+          right: 600px;
+        }
+
+        @media (max-width: $screen-xl) {
+          right: 500px;
+        }
+
+        @media (max-width: $screen-md-lg) {
+          right: 235px;
+        }
+
+        @media (max-width: $screen-md) {
+          right: 0px;
+        }
+
+        @media (max-width: $screen-sm) {
+          position: relative;
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        img {
+          width: 70%;
+        }
+
+        .trigger {
+          right: unset;
+          left: -45px;
+          top: 180px;
+        }
+
+        .tooltip-modal {
+          right: unset;
+          left: -600px;
+          top: 55px;
+
+          @media (max-width: $screen-md) {
+            left: 50%;
+            top: 50%;
+          }
+        }
+      }
+    }
+  }
+}

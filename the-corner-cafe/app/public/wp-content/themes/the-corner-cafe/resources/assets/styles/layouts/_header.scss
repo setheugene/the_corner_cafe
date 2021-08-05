@@ -1,0 +1,429 @@
+.primary-nav {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "logo menu right";
+  height: 130px;
+  background: linear-gradient($color-cc-black, transparent);
+  text-transform: uppercase;
+  color: $color-main-light;
+  z-index: 5;
+  width: 100vw;
+
+  @media (max-width: $screen-md-lg) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 100px auto;
+    grid-template-areas: "right right" "logo menu" ". .";
+    height: 175px;
+  }
+
+  @media (max-width: $screen-sm) {
+    display: none;
+  }
+
+  .nav__logo {
+    grid-area: logo;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-left: 25px;
+
+    @media (max-width: $screen-md-lg) {
+      align-items: flex-start;
+      justify-content: center;
+      margin: 15px 0 0 0;
+    }
+
+    img {
+      height: 100px;
+
+      @media (max-width: $screen-lg) {
+        height: 80px;
+      }
+
+      @media (max-width: $screen-sm) {
+        height: 55px;
+        margin-bottom: 15px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .menu-main-menu-container {
+    grid-area: menu;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-family: "Yanone Kaffeesatz", sans-serif;
+
+    @media (max-width: $screen-md-lg) {
+      align-items: center;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      margin-bottom: 0;
+      width: 100%;
+
+      @media (max-width: $screen-md-lg) {
+        padding: 0;
+        justify-content: space-evenly;
+      }
+
+      .current_page_item a::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-bottom: 8px solid $color-cc-red;
+      }
+
+      .current_page_parent a::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        border-bottom: 8px solid $color-cc-red;
+      }
+
+      .menu-item {
+        position: relative;
+        list-style: none;
+        font-size: 43px;
+
+        @media (max-width: $screen-md-lg) {
+          font-size: 40px;
+        }
+
+        @media (max-width: $screen-md) {
+          font-size: 34px;
+        }
+
+        @media (max-width: $screen-sm) {
+          font-size: 25px;
+        }
+
+        &-has-children::after {
+          content: "";
+          cursor: pointer;
+          background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-menu-arrow.svg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          position: absolute;
+          bottom: 30px;
+          right: -25px;
+          width: 20px;
+          height: 9px;
+
+          @media (max-width: $screen-md-lg) {
+            bottom: 30px;
+            right: -20px;
+            width: 16px;
+            height: 7px;
+          }
+
+          @media (max-width: $screen-md) {
+            bottom: 24px;
+          }
+
+          @media (max-width: $screen-sm) {
+            bottom: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-main-menu-container ul ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    background-color: $color-cc-red;
+    padding-left: 25px;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+    width: 160px;
+    text-transform: capitalize;
+
+    li.menu-item a {
+      font-size: 28px;
+    }
+
+    .menu-item {
+      line-height: 1.1;
+    }
+  }
+
+  .menu-main-menu-container ul li:hover > ul {
+    height: 200%;
+  }
+
+  .nav__right {
+    grid-area: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $screen-md-lg) {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: baseline;
+    }
+
+    &--top {
+      font-family: "Vollkorn", serif;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+      height: 30%;
+
+      @media (max-width: $screen-md-lg) {
+        margin-top: 12px;
+        height: 40px;
+        position: absolute;
+        left: 10%;
+      }
+
+      @media (max-width: $screen-md) {
+        height: 32px;
+      }
+
+      @media (max-width: $screen-sm) {
+        left: 7%;
+      }
+
+      .button-left {
+        margin-right: 20px;
+      }
+    }
+
+    &--bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 17px;
+
+      @media (max-width: $screen-md-lg) {
+        margin-top: 10px;
+        height: 40px;
+        position: absolute;
+        right: 9%;
+      }
+
+      @media (max-width: $screen-sm) {
+        right: 7%;
+      }
+
+      .location {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        font-size: 22px;
+        margin-right: 25px;
+      }
+
+      .search {
+        display: flex;
+
+        span {
+          font-size: 20px;
+        }
+      }
+
+      .far {
+        margin: 8px 0 0 20px;
+        transform: scaleX(-1);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  display: none;
+  width: 100vw;
+
+  @media (max-width: $screen-sm) {
+    display: flex;
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    height: 130px;
+    background: linear-gradient($color-cc-black, transparent);
+    text-transform: uppercase;
+    z-index: 5;
+    width: 100%;
+
+    a img {
+      margin-left: 20px;
+      width: 85%;
+
+      @media (max-width: $screen-sm) {
+        width: 75%;
+      }
+    }
+
+    .button-hamburger {
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 50px;
+
+      @media (max-width: $screen-xs) {
+        margin-right: 35px;
+      }
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: $color-cc-white;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-8px, 7px);
+      transform: rotate(-45deg) translate(-8px, 7px);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+  }
+  .nav-panel {
+    position: absolute;
+    width: 200px;
+    height: fit-content;
+    left: -230px;
+    overflow: hidden;
+    background-color: $color-main-light;
+    transition: all 0.3s;
+    padding-top: 40px;
+    z-index: 50;
+    box-shadow: 1px 0px 6px 0px rgba($color-cc-black, 0.6);
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #42524a;
+
+    .mobile-search {
+      width: 100%;
+      .label {
+        font-size: 22px;
+        margin-left: 22px;
+      }
+      .search-form {
+        .search-field {
+          width: 80%;
+          padding: 0.375rem 0.75rem;
+          margin: 0 auto 25px auto;
+
+          &:focus {
+            width: 80%;
+          }
+        }
+      }
+      .search-button {
+        display: none;
+      }
+    }
+
+    .menu-main-menu-container {
+      .top-nav {
+        .menu-item {
+          list-style: none;
+          font-size: 34px;
+          line-height: 1.4;
+
+          .sub-menu {
+            position: relative;
+            font-weight: 300;
+            padding-left: 22px;
+            font-size: 30px;
+            line-height: 1.4;
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 10px;
+              left: 13px;
+              border-left: 2px solid $color-cc-red;
+              height: 75%;
+            }
+
+            .menu-item {
+              font-size: 30px;
+              margin: 7px 0;
+              line-height: 1.4;
+            }
+          }
+        }
+      }
+    }
+
+    hr {
+      height: 1px;
+      background-color: $color-cc-dark-green;
+      margin: 30px auto;
+      width: 80%;
+    }
+
+    .locations {
+      background-color: $color-cc-dark-green;
+      color: $color-main-light;
+      padding: 6px 13px 3px;
+      text-align: center;
+      width: fit-content;
+      font-size: 20px;
+      margin: 0 auto;
+    }
+
+    &-buttons {
+      grid-area: buttons;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0 30px;
+
+      a {
+        font-size: 25px;
+        height: 30px;
+        margin-top: 20px;
+        color: $color-cc-white;
+      }
+
+      .button-slant {
+        span {
+          padding: 2px 5px 1px 5px;
+        }
+      }
+    }
+  }
+  .open {
+    left: 0;
+  }
+}

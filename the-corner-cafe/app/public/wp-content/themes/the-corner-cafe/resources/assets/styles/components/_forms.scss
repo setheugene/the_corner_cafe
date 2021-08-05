@@ -1,0 +1,186 @@
+/** Search form */
+.search-form {
+  @extend .form-inline;
+}
+
+.search-form label {
+  @extend .form-group;
+
+  font-weight: normal;
+}
+
+.search-form .search-field {
+  @extend .form-control;
+}
+
+.search-form .search-submit {
+  @extend .btn;
+  @extend .btn-secondary;
+}
+
+//GLOBAL WP FORM STYLE
+.wpforms-container {
+  &-full {
+    width: 90% !important;
+    z-index: 20;
+  }
+
+  .wpforms-confirmation-container-full {
+    background-color: $color-main-light;
+    color: $color-main-dark;
+    border-color: $color-cc-dark-green;
+    text-align: center;
+  }
+
+  .wpforms-field.wpforms-field-file-upload.wpforms-one-half {
+    @media (max-width: $screen-xs) {
+      margin-left: 0;
+      float: none;
+      width: 100%;
+    }
+  }
+
+  .wpforms-form {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 18px;
+
+    .wpforms-field-container {
+      .wpforms-field-label {
+        font-weight: 400;
+      }
+
+      input[type="text"] {
+        border: 1px solid $color-cc-black;
+        height: 43px;
+      }
+
+      input[type="tel"] {
+        border: 1px solid $color-cc-black;
+        height: 43px;
+      }
+
+      input[type="email"] {
+        border: 1px solid $color-cc-black;
+        height: 43px;
+      }
+
+      textarea {
+        border: 1px solid $color-cc-black;
+      }
+
+      select {
+        position: relative;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border: 1px solid $color-cc-black;
+        height: 43px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: 93% 57%;
+        background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Form-arrow.svg");
+        color: $color-main-dark;
+      }
+
+      select::-ms-expand {
+        display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+      }
+
+      .wpforms-field-select {
+        position: relative;
+
+        &::after {
+          content: "";
+          cursor: pointer;
+          position: absolute;
+          top: -8px;
+          right: 20px;
+          font-size: 55px;
+          font-weight: 100;
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .wpforms-submit-container {
+      .wpforms-submit {
+        display: inline-block;
+        font-family: "Vollkorn", serif;
+        font-weight: 900;
+        font-size: 19px;
+        text-transform: uppercase;
+        color: $color-cc-red;
+        background-color: $color-cc-white;
+        padding: 13px 17px 10px;
+        border-radius: 13px;
+        border: 1px solid $color-cc-green;
+        box-shadow: 0 5px 0 -0.5px $color-cc-green;
+        transition: all 0.2s;
+
+        &:hover {
+          transform: translateY(-4px);
+          background-color: $color-cc-white;
+          box-shadow: 0 10px 6px -0.5px rgba($color-cc-green, 0.7);
+        }
+
+        &:active {
+          transform: translateY(5px);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  /* Target Internet Explorer 9 to undo the custom arrow */
+  @media screen and (min-width: 0\0) {
+    select {
+      background-image: none\9;
+      padding: 5px\9;
+    }
+  }
+}
+
+//SEARCHFORM.BLADE.PHP
+.search-form {
+  margin-left: 5px;
+
+  .search-field {
+    font-family: "Yanone Kaffeesatz", sans-serif;
+    font-size: 20px;
+    border-radius: 0;
+    height: 35px;
+    width: 0px;
+    margin-left: 15px;
+    border: none;
+    padding: 0;
+    transition: all 0.5s;
+
+    &:focus {
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+    }
+  }
+
+  .search-icon {
+    margin-top: 7px;
+    opacity: 1;
+    display: block;
+    cursor: pointer;
+  }
+
+  .search-button {
+    background: none;
+    border: none;
+    color: $color-cc-white;
+  }
+
+  .search-active {
+    width: 70%;
+    opacity: 1;
+    display: block;
+  }
+}
+
+.hide {
+  opacity: 0;
+  display: none;
+}

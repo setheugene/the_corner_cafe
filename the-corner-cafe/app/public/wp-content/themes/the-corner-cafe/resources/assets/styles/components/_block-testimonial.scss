@@ -1,0 +1,195 @@
+.testimonial-section {
+  position: relative;
+
+  &-bg {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "heading quotes";
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "heading" "quotes";
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100vw;
+      left: 50%;
+      z-index: -5;
+      margin-left: -50vw;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &-left {
+    grid-area: heading;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 100px 30px 0 0;
+
+    @media (max-width: $screen-sm) {
+      padding: 0;
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    h2 {
+      font-size: 70px;
+      color: $color-main-light;
+      line-height: 0.986;
+
+      @media (max-width: $screen-sm) {
+        font-size: 55px;
+        text-align: center;
+        width: 80%;
+        margin: 60px 0 0;
+      }
+
+      @media (max-width: $screen-xs) {
+        font-size: 45px;
+      }
+    }
+    .dish {
+      @media (max-width: $screen-sm) {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &-right {
+    grid-area: quotes;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $screen-sm) {
+      height: 430px;
+      position: relative;
+      margin: 0 auto 45px;
+      width: 75%;
+    }
+
+    .carousel-container {
+      background-image: url(/wp-content/uploads/2020/04/Corener-Cafe-Testimonial-chalkboard-background.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      height: 71%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 70px;
+
+      @media (max-width: $screen-md-lg) {
+        height: 80%;
+      }
+
+      @media (max-width: $screen-md) {
+        width: 150%;
+        position: absolute;
+      }
+
+      @media (max-width: $screen-sm) {
+        background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-Testimonial-chalkboard-background-mobile.png");
+        padding: 0;
+        width: 140%;
+        background-position: center;
+        height: 400px;
+        background-size: contain;
+        padding-left: 0;
+      }
+
+      .testimonial-slider {
+        position: absolute;
+        width: 65%;
+        margin: -15px auto 0;
+
+        @media (max-width: $screen-sm) {
+          position: relative;
+          margin-top: 50px;
+          width: 85%;
+          margin: 0 auto 45px;
+        }
+
+        .slick-list {
+          max-height: 325px;
+        }
+
+        .slick-dots li {
+          margin: 0;
+        }
+
+        .slick-dots li button:before {
+          content: "";
+          height: 8px;
+          width: 8px;
+          border: 1px solid $color-cc-white;
+          border-radius: 50%;
+          margin: 26px 0 0 6px;
+
+          @media (max-width: $screen-sm) {
+            margin-top: 10px;
+          }
+        }
+
+        .slick-dots li.slick-active button:before {
+          background-color: rgba($color-cc-white, 0.6);
+        }
+
+        .slide {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          font-family: "Yanone Kaffeesatz", sans-serif;
+          color: $color-main-light;
+          text-align: center;
+          height: 325px;
+
+          @media (max-width: $screen-sm) {
+            height: 350px;
+            margin-top: 18px;
+          }
+
+          .icon {
+            background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-quote-mark.svg");
+            background-size: cover;
+            background-position: center;
+            height: 23px;
+            margin: 0 auto 15px;
+            width: 30px;
+          }
+
+          .quote {
+            font-size: 28px;
+            line-height: 1.5;
+            font-weight: 300;
+
+            @media (max-width: $screen-sm) {
+              font-size: 25px;
+            }
+          }
+          .name {
+            font-size: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            @media (max-width: $screen-sm) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

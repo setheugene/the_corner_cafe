@@ -1,0 +1,493 @@
+.section-menu {
+  position: relative;
+  padding: 100px 0;
+
+  @media (max-width: $screen-md) {
+    padding-bottom: 500px;
+  }
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .description {
+    text-align: center;
+    margin: 0 auto 70px;
+    width: 80%;
+
+    @media (max-width: $screen-md) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "sidebar main";
+
+    @media (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "sidebar" "main";
+    }
+
+    .left-sidebar {
+      grid-area: sidebar;
+
+      @media (max-width: $screen-md) {
+        display: flex;
+        width: 95%;
+        margin: 0 auto 60px;
+      }
+
+      @media (max-width: $screen-md) {
+        flex-direction: column-reverse;
+      }
+
+      .categories-container {
+        @media (max-width: $screen-md) {
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        ul.categories-list {
+          list-style: none;
+          background-color: $color-cc-white;
+          color: $color-cc-dark-green;
+          border: 1px solid $color-cc-green;
+          box-shadow: $surrounding-box-shadow;
+          padding: 0;
+
+          @media (max-width: $screen-md) {
+            width: 90%;
+            margin: 0 auto;
+          }
+
+          li {
+            cursor: pointer;
+            padding: 15px 25px 10px 25px;
+
+            h5 {
+              margin: 0;
+              line-height: 1;
+            }
+
+            &:not(:first-child) {
+              border-top: 1px solid $color-cc-green;
+            }
+          }
+          .selected {
+            position: relative;
+            background-color: $color-cc-dark-green;
+
+            &::after {
+              content: "";
+              position: absolute;
+              background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Green-arrow.svg");
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center center;
+              top: 0px;
+              right: -28px;
+              width: 45px;
+              height: 102%;
+
+              @media (max-width: $screen-md) {
+                display: none;
+              }
+            }
+
+            h5 {
+              color: $color-cc-white;
+            }
+          }
+        }
+      }
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: $screen-md) {
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 40px;
+        }
+
+        a {
+          font-size: 35px;
+          height: 47px;
+          margin-top: 20px;
+          color: $color-main-light;
+        }
+
+        a:not(:first-child) {
+          @media (max-width: $screen-md) {
+            margin-left: 15px;
+          }
+        }
+
+        // a:nth-child(1) {
+        //   @media (max-width: $screen-md) {
+        //     margin-right: 15px;
+        //   }
+        // }
+
+        // a:nth-child(2) {
+          // @media (max-width: $screen-md) {
+          //   margin-left: 25px;
+          // }
+        // }
+
+        .button-slant {
+          span {
+            padding: 7px 5px 1px 5px;
+          }
+        }
+      }
+
+      .menu-landmark-modal {
+        position: absolute;
+        left: -175px;
+        bottom: -110px;
+
+        @media (max-width: $screen-lg) {
+          left: -90px;
+        }
+
+        @media (max-width: $screen-md) {
+          bottom: 50px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          left: 0;
+        }
+
+        .landmark-modal {
+          img {
+            @media (max-width: $screen-md) {
+              height: 400px;
+            }
+          }
+          .trigger {
+            @media (max-width: $screen-md) {
+              right: 220px;
+            }
+
+            @media (max-width: $screen-sm) {
+              right: 140px;
+            }
+
+            @media (max-width: $screen-xs) {
+              right: 85px;
+            }
+          }
+        }
+      }
+    }
+    .right-main {
+      grid-area: main;
+      min-height: 1300px;
+
+      @media (max-width: $screen-md) {
+        min-height: 900px;
+      }
+
+      .menu-container {
+        position: relative;
+        width: 90%;
+        margin-left: auto;
+
+        @media (max-width: $screen-md) {
+          margin-right: auto;
+          width: 100%;
+        }
+
+        .menu-card {
+          display: flex;
+          flex-direction: column;
+          justify-items: flex-start;
+          align-items: center;
+          color: $color-cc-dark-green;
+          background-color: $color-cc-white;
+          box-shadow: $surrounding-box-shadow;
+          padding: 10px;
+          height: fit-content;
+          width: 100%;
+          margin-bottom: 100px;
+          margin-left: auto;
+
+          .image {
+            width: 100%;
+            height: 350px;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+          .heading {
+            font-family: "Oleo Script", cursive;
+            font-size: 78px;
+            text-align: center;
+            line-height: 1;
+            margin: 35px 30px 20px;
+
+            @media (max-width: $screen-md) {
+              font-size: 50px;
+            }
+          }
+          .sub-heading p {
+            font-family: "Yanone Kaffeesatz", sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 20px;
+          }
+        }
+        .category-header {
+          color: $color-cc-red;
+          border-bottom: 2px solid $color-cc-green;
+          text-shadow: -2px -1px $color-cc-dark-green;
+          font-weight: 700;
+          letter-spacing: 3px;
+          margin: 50px 0 35px;
+
+          @media (max-width: $screen-md) {
+            width: 95%;
+            margin: 50px auto 35px;
+          }
+        }
+
+        .category-description {
+          font-family: "Yanone Kaffeesatz", sans-serif;
+          color: #42524a;
+          font-weight: 300;
+          font-size: 22px;
+          line-height: 1.1;
+          text-align: left;
+          margin: 20px 0 40px;
+        }
+
+        .dishes-container {
+          column-count: 2;
+          column-gap: 40px;
+          margin: 25px 0 20px;
+
+          @media (max-width: $screen-md) {
+            width: 95%;
+            margin: 25px auto 20px;
+          }
+
+          .dish-container {
+            position: relative;
+            width: 100%;
+            margin: 0 0 25px;
+            display: inline-block;
+            break-inside: avoid;
+
+            .dish-row {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .image-icon {
+                align-self: flex-start;
+                margin: 1px 10px 0 0;
+                position: absolute;
+                cursor: pointer;
+              }
+
+              .image-modal {
+                opacity: 0;
+                z-index: -10;
+                position: absolute;
+                display: none;
+                width: 200px;
+                height: 125px;
+                background-color: $color-cc-white;
+                border-radius: 5px;
+                padding: 5px;
+                left: -205px;
+                top: 10px;
+                box-shadow: -3px -1px 4px 0px rgba($color-cc-black, 0.6);
+                transition: all 0.3s;
+                cursor: auto;
+
+                //SAFARI
+                @media not all and (min-resolution: 0.001dpcm) {
+                  @supports (-webkit-appearance: none) {
+                    left: 5px;
+                    top: 35px;
+                  }
+                }
+
+                @media (max-width: $screen-sm) {
+                  position: fixed;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  z-index: 10;
+                }
+
+                img {
+                  border-radius: 5px;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+
+                .exit {
+                  position: relative;
+                }
+              }
+
+              .show {
+                opacity: 1;
+                z-index: 5;
+                display: block;
+              }
+
+              .stay {
+                opacity: 1;
+                z-index: 5;
+                display: block;
+              }
+
+              .stay > .exit::after {
+                content: "+";
+                position: absolute;
+                width: 27px;
+                height: 27px;
+                top: -15px;
+                right: -35px;
+                border-radius: 50%;
+                border: 1px solid $color-cc-black;
+                background-color: $color-main-light;
+                color: $color-cc-red;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 300;
+                font-size: 31px;
+                padding: 0 0 5px 1px;
+                transform: rotate(45deg);
+                opacity: 1;
+
+                //SAFARI
+                @media not all and (min-resolution: 0.001dpcm) {
+                  @supports (-webkit-appearance: none) {
+                    left: 173px;
+                    top: -40px;
+                  }
+                }
+              }
+
+              h5 {
+                letter-spacing: 1px;
+                max-width: 255px;
+
+                @media (max-width: $screen-sm) {
+                  font-size: 20px;
+                  max-width: 110px;
+                }
+              }
+
+              .filler {
+                border-top: 2px dashed $color-cc-charcoal;
+                margin: 0 10px 9px;
+                overflow: hidden;
+                width: 100%;
+                flex-basis: 0;
+                flex-grow: 1;
+              }
+            }
+
+            .dish-description p {
+              font-family: "Yanone Kaffeesatz", sans-serif;
+              color: $color-cc-black;
+              font-weight: 300;
+              font-size: 20px;
+              line-height: 1.1;
+              text-align: left;
+
+              @media (max-width: $screen-sm) {
+                font-size: 18px;
+              }
+            }
+
+            .red-outline {
+              border: 1px solid $color-cc-red;
+              padding: 20px 15px 5px 15px;
+            }
+
+            .red-outline > .dish-description > p {
+              line-height: 1.5;
+            }
+
+            .option-row {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-family: "Yanone Kaffeesatz", sans-serif;
+              color: $color-cc-dark-green;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 1.1;
+              margin: 10px 0 0 10px;
+
+              @media (max-width: $screen-sm) {
+                font-size: 15px;
+              }
+            }
+
+            .option-description {
+              max-width: 260px;
+            }
+
+            .filler {
+              border-top: 2px dashed $color-cc-charcoal;
+              margin: 0 10px 0;
+              overflow: hidden;
+              width: 100%;
+              flex-basis: 0;
+              flex-grow: 1;
+            }
+
+            .option-price {
+              white-space: nowrap;
+            }
+
+            .option-choices {
+              font-family: "Yanone Kaffeesatz", sans-serif;
+              color: $color-cc-dark-green;
+              font-weight: 300;
+              font-size: 20px;
+              line-height: 1.1;
+              margin: 8px 0 15px 25px;
+
+              @media (max-width: $screen-sm) {
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.light-section {
+  position: relative;
+  padding-bottom: 80px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .gingham-banner {
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/red-gingham-pattern.jpg");
+    background-repeat: repeat-x;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    height: 55px;
+    top: 383px;
+    z-index: -15;
+    overflow-x: hidden;
+    width: 100vw;
+
+    @media (max-width: $screen-sm) {
+      top: 158px;
+    }
+  }
+
+  .section-light {
+    position: relative;
+    margin-top: 600px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "clock copy";
+
+    @media (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "copy" "clock";
+      margin-top: 550px;
+    }
+
+    @media (max-width: $screen-sm) {
+      margin-top: 290px;
+    }
+
+    &__left {
+      grid-area: clock;
+      position: absolute;
+      right: 90px;
+      margin-top: -95px;
+      display: flex;
+
+      @media (max-width: $screen-lg) {
+        right: auto;
+        margin-left: -15vw;
+      }
+
+      @media (max-width: $screen-md-lg) {
+        margin-left: -10vw;
+      }
+
+      @media (max-width: $screen-md) {
+        position: relative;
+        margin: 60px auto 0;
+      }
+
+      img {
+        width: 430px;
+        height: 430px;
+
+        @media (max-width: $screen-lg) {
+          width: 400px;
+          height: 400px;
+        }
+
+        @media (max-width: $screen-md-lg) {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+
+    &__right {
+      grid-area: copy;
+
+      .header-offset {
+        float: left;
+        margin: -75px 50px 0 0;
+
+        h2:nth-child(2) {
+          margin-bottom: -10px;
+        }
+      }
+    }
+  }
+}

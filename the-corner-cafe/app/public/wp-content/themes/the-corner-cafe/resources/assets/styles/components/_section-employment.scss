@@ -1,0 +1,153 @@
+.section-employment {
+  position: relative;
+  padding: 100px 0;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    z-index: -5;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+  }
+
+  .employment-description {
+    width: 85%;
+    text-align: center;
+    margin: 0 auto 90px;
+  }
+
+  .employment-two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "positions form";
+
+    @media (max-width: $screen-sm) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: "positions" "form";
+      width: 85%;
+      margin: 0 auto;
+    }
+
+    .column-left {
+      grid-area: positions;
+      margin-right: 40px;
+
+      @media (max-width: $screen-sm) {
+        margin: 0 auto;
+      }
+
+      h4 {
+        position: relative;
+        color: $color-cc-dark-green;
+        border-bottom: 1px solid $color-cc-green;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+
+        @media (max-width: $screen-sm) {
+          font-size: 30px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 30px;
+        }
+
+        .circle {
+          border: 1px solid $color-cc-dark-green;
+          width: 33px;
+          height: 33px;
+          border-radius: 100%;
+          position: relative;
+          margin: 4px;
+          display: inline-block;
+          vertical-align: middle;
+          float: right;
+
+          @media (max-width: $screen-sm) {
+            width: 27px;
+            height: 27px;
+          }
+        }
+
+        .circle.plus:before,
+        .circle.plus:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: $color-cc-dark-green;
+        }
+
+        .circle.plus:before {
+          width: 1px;
+          margin: 5px auto;
+        }
+
+        .circle.plus:after {
+          margin: auto 5px;
+          height: 1px;
+        }
+
+        .circle.minus:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: $color-cc-dark-green;
+          margin: auto 5px;
+          height: 1px;
+        }
+      }
+
+      .expand {
+        height: fit-content !important;
+        min-height:-moz-max-content !important;
+      }
+
+      .positions-container {
+        height: 0;
+        overflow: hidden;
+
+        .position {
+          margin: 50px 5px 30px 30px;
+          h6 {
+            color: $color-cc-red;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+          }
+
+          p {
+            color: $color-main-dark;
+            font-size: 20px;
+            line-height: 1.1;
+          }
+        }
+      }
+    }
+
+    .column-right {
+      grid-area: form;
+      margin-left: 40px;
+
+      @media (max-width: $screen-sm) {
+        margin: 110px auto 0;
+      }
+
+      h4 {
+        color: $color-cc-red;
+      }
+    }
+  }
+}

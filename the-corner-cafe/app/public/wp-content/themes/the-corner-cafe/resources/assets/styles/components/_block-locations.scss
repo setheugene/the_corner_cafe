@@ -1,0 +1,171 @@
+.section-locations {
+  position: relative;
+  padding-bottom: 60px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .gingham-banner {
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/red-gingham-pattern.jpg");
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+    height: 55px;
+    top: -2px;
+    z-index: -15;
+    overflow-x: hidden;
+  }
+
+  .oleo {
+    font-size: 50px;
+    text-align: center;
+    margin: 0 auto 70px;
+    padding-top: 120px;
+    text-transform: none;
+    color: $color-cc-dark-green;
+    text-transform: capitalize;
+    text-shadow: -2px 2px $color-cc-white;
+
+    @media (max-width: $screen-sm) {
+      margin-bottom: 0;
+      padding-top: 60px;
+    }
+  }
+
+  .locations-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .location {
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-items: flex-start;
+      align-items: center;
+      color: $color-main-dark;
+      font-size: 25px;
+
+      @media (max-width: $screen-md) {
+        font-size: 20px;
+      }
+
+      @media (max-width: $screen-sm) {
+        font-size: 25px;
+        margin-top: 40px;
+      }
+
+      .title {
+        color: $color-cc-red;
+        font-weight: 500;
+        font-size: 40px;
+        letter-spacing: 1.5px;
+      }
+
+      .photo {
+        width: 330px;
+        height: 160px;
+
+        @media (max-width: $screen-md-lg) {
+          width: 290px;
+        }
+
+        @media (max-width: $screen-md) {
+          width: 210px;
+          height: 110px;
+        }
+
+        @media (max-width: $screen-sm) {
+          width: 70%;
+          height: 160px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+          border: 3px solid white;
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        margin: 20px 0 15px;
+
+        .facebook-icon {
+          border-radius: 0; /*Removes border*/
+          -webkit-appearance: none; /*Removes default chrome and safari style*/
+          -moz-appearance: none; /*Removes default style Firefox*/
+          background: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-FB-icon.svg")
+            no-repeat;
+          height: 40px;
+          width: 40px;
+          background-size: cover;
+          color: $color-cc-dark-green;
+        }
+
+        .twitter-icon {
+          border-radius: 0; /*Removes border*/
+          -webkit-appearance: none; /*Removes default chrome and safari style*/
+          -moz-appearance: none; /*Removes default style Firefox*/
+          background: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-twitter-icon.svg")
+            no-repeat;
+          height: 40px;
+          width: 41px;
+          background-size: cover;
+          color: $color-cc-dark-green;
+          margin-left: 25px;
+        }
+
+        .instagram-icon {
+          border-radius: 0; /*Removes border*/
+          -webkit-appearance: none; /*Removes default chrome and safari style*/
+          -moz-appearance: none; /*Removes default style Firefox*/
+          background: url("/wp-content/themes/the-corner-cafe/resources/assets/images/Corner-Cafe-instagram-icon.svg")
+            no-repeat;
+          height: 41px;
+          width: 41px;
+          background-size: cover;
+          color: $color-cc-dark-green;
+          margin-left: 25px;
+        }
+      }
+
+      .phone {
+        font-size: 35px;
+        letter-spacing: 1.5px;
+
+        @media (max-width: $screen-md) {
+          font-size: 27px;
+        }
+        @media (max-width: $screen-sm) {
+          font-size: 33px;
+        }
+      }
+
+      .address-link {
+        margin: 10px 0;
+        text-align: center;
+        line-height: 1;
+      }
+    }
+  }
+}

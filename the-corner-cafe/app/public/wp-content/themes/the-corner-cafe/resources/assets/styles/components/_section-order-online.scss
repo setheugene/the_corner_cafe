@@ -1,0 +1,112 @@
+.section-order-online {
+  position: relative;
+  padding-bottom: 100px;
+
+  &::before {
+    content: "";
+    background-image: url("/wp-content/themes/the-corner-cafe/resources/assets/images/cream-texture-background.jpg");
+    position: absolute;
+    height: 100%;
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    margin-left: -50vw;
+    background-repeat: round repeat;
+    background-size: contain;
+    z-index: -15;
+  }
+
+  .oleo {
+    font-size: 50px;
+    text-align: center;
+    margin: 0 auto 70px;
+    padding-top: 120px;
+    text-transform: none;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    @media (max-width: $screen-md-lg) {
+      justify-content: space-between;
+    }
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+    }
+
+    .gingham-bg {
+      background-image: url(/wp-content/uploads/2020/05/red-gingham-rectangle.jpg);
+      background-size: cover;
+      height: 250px;
+      width: 330px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: $screen-md-lg) {
+        height: 220px;
+        width: 275px;
+      }
+
+      @media (max-width: $screen-md) {
+        height: 175px;
+        width: 215px;
+      }
+
+      @media (max-width: $screen-sm) {
+        height: 250px;
+        width: 330px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .location-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $box-shadow-to-lower-left;
+      width: 85%;
+      height: 85%;
+      padding: 15px 20px;
+      background-color: $color-cc-dark-green;
+      color: $color-main-light;
+
+      @media (max-width: $screen-md) {
+        h3 {
+          font-size: 35px;
+        }
+      }
+
+      @media (max-width: $screen-sm) {
+        h3 {
+          font-size: 50px;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 95%;
+        height: 95%;
+        border: 2px solid $color-main-light;
+      }
+
+      .button-primary a {
+        @media (max-width: $screen-md) {
+          font-size: 14px;
+        }
+
+        @media (max-width: $screen-sm) {
+          font-size: 19px;
+        }
+      }
+    }
+  }
+}
